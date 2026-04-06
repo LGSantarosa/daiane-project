@@ -1,203 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Luiz Santarosa">
-        <meta name="keywords" content="fotografia">
-        <meta name="description" content="Portifolio de fotografia">
-        
-        <!-- Ícones -->
-        <script src="https://kit.fontawesome.com/6986dec96f.js" crossorigin="anonymous"></script>
-        
-        <!-- Fontes -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sintony:wght@400;700&display=swap" rel="stylesheet">
-        
-        <!-- Estilos -->
-        <link rel="stylesheet" href="/style/normalize.css">
-        <link rel="stylesheet" href="/style/main.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio e Agendamento - Daiane Santarosa Fotografia">
+  <title>Daiane Santarosa · Fotografia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
 
-    <body class="no-js">
-        <!-- Cabeçalho -->
-        <header class="header">
-            <a href="/index.html" class="logo-text">Daiane Santarosa</a>
-            
-            <button style="display: none;" class="header__btnMenu"> 
-                <i class="fa-solid fa-bars fa-2x"></i> 
-                <span class="sr-only">Menu</span>
-            </button>
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <div class="loader__logo">DS</div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+</div>
 
-        <!-- Links -->
-            <nav class="header__nav">
-                <ul>
-                    <li><a href="#" id="scrollLink">Serviços</a></li>
-                    <li><a href="https://wa.me/554192576289?text=Ol%C3%A1%20Daiane%20">Contato</a></li>
-                    <li><a href="https://www.instagram.com/daianesantarosafotografia/">Conheça</a></li>
-                </ul>
-            </nav>
-        </header>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#inicio" class="header__brand">Daiane Santarosa</a>
+  <nav class="header__nav" id="nav">
+    <a href="#inicio"      class="nav__link">Início</a>
+    <a href="#servicos"    class="nav__link">Serviços</a>
+    <a href="#portfolio"   class="nav__link">Portfólio</a>
+    <a href="#depoimentos" class="nav__link">Depoimentos</a>
+    <a href="#agendar"     class="nav__link">Agendar</a>
 
-        <!-- Seção Principal -->
-        <div class="container_principal">
-            <section class="principal">            
-                <img src="img/santarosa_logo.jpg" alt="logo" class="logo_principal">                 
-            </section>
-        </div>
-
-        <!-- Seção de Feedbacks -->
-<section class="feedbacks">
-    <div class="feedbacks__title">
-        <div class="container">
-            <h2>Feedbacks</h2>
-        </div>
+    <!-- Não logado -->
+    <div class="nav__auth" id="navAuth">
+      <button class="nav__login-btn" id="btnOpenLogin">
+        <i class="fa-solid fa-user"></i> Entrar
+      </button>
     </div>
 
-    <!-- Carrossel de Feedbacks -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <!-- Feedback 1 -->
-            <div class="swiper-slide">
-                <div class="feedback-content">
-                    <img src="img/feedback_1.jpg" alt="Feedback Gisselle" class="feedback-image">
-                    <p class="feedback-text">"Eu amei todas as fotos, ficaram lindas lindas, vou fazer um grande proveito delas, obrigada Dai!!"</p>
-                    <p class="feedback-author">- Gisselle</p>
-                </div>
-            </div>
-
-            <!-- Feedback 2 -->
-            <div class="swiper-slide">
-                <div class="feedback-content">
-                    <img src="img/Feedback_2.jpg" alt="Feedback Monique" class="feedback-image">
-                    <p class="feedback-text">"Seu trabalho é lindo e impecável!!"</p>
-                    <p class="feedback-author">- Monique</p>
-                </div>
-            </div>
-
-            <!-- Feedback 3 -->
-            <div class="swiper-slide">
-                <div class="feedback-content">
-                    <img src="img/Feedback_3.jpg" alt="Feedback Danielle" class="feedback-image">
-                    <p class="feedback-text">"Não sei nem qual foi minha favorita, amei todasssssssss!!"</p>
-                    <p class="feedback-author">- Danielle</p>
-                </div>
-            </div>
-
-            <!-- Feedback 4 -->
-            <div class="swiper-slide">
-                <div class="feedback-content">
-                    <img src="img/Feedback_4.jpg" alt="Feedback Carol" class="feedback-image">
-                    <p class="feedback-text">"Obrigadaaaa, ficaram lindas as fotos" </p>
-                    <p class="feedback-author">- Carol</p>
-                </div>
-            </div>
-        </div>
+    <!-- Logado -->
+    <div class="nav__user" id="navUser" style="display:none">
+      <button class="nav__user-btn" id="btnUserMenu">
+        <span class="user-avatar" id="userAvatar"><i class="fa-solid fa-user"></i></span>
+        <span id="userName"></span>
+        <i class="fa-solid fa-chevron-down" style="font-size:.6rem"></i>
+      </button>
+      <div class="user-dropdown" id="userDropdown">
+        <a href="#meus-agendamentos" class="user-dropdown__item"><i class="fa-solid fa-calendar-check"></i> Meus Agendamentos</a>
+        <a href="admin.html" class="user-dropdown__item" id="linkAdmin" style="display:none"><i class="fa-solid fa-shield-halved"></i> Painel Admin</a>
+        <button class="user-dropdown__item user-dropdown__item--danger" id="btnLogoutSite"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+      </div>
     </div>
+  </nav>
+  <button class="header__hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- AUTH MODAL -->
+<div class="auth-overlay" id="authOverlay" style="display:none">
+  <div class="auth-modal">
+    <button class="auth-modal__close" id="btnCloseAuth"><i class="fa-solid fa-xmark"></i></button>
+    <div class="auth-modal__logo">DS</div>
+
+    <!-- Login -->
+    <div class="auth-form" id="formLogin">
+      <h2 class="auth-modal__title">Entrar</h2>
+      <p class="auth-modal__sub">Acesse sua conta para agendar e acompanhar seus ensaios</p>
+      <button class="btn-google" id="btnGoogleLogin">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="18" height="18">
+        Continuar com Google
+      </button>
+      <div class="auth-divider"><span>ou</span></div>
+      <div class="form-group"><label>E-mail</label><input type="email" id="authLoginEmail" placeholder="seu@email.com" autocomplete="email"></div>
+      <div class="form-group"><label>Senha</label><input type="password" id="authLoginSenha" placeholder="Sua senha" autocomplete="current-password"></div>
+      <div class="auth-error" id="authLoginError"></div>
+      <button class="btn btn--primary auth-submit" id="btnAuthLogin">Entrar</button>
+      <p class="auth-switch">Ainda não tem conta? <button id="btnGoRegister">Cadastre-se</button></p>
+    </div>
+
+    <!-- Cadastro -->
+    <div class="auth-form" id="formRegister" style="display:none">
+      <h2 class="auth-modal__title">Criar Conta</h2>
+      <p class="auth-modal__sub">Cadastre-se para agendar seus ensaios fotográficos</p>
+      <button class="btn-google" id="btnGoogleRegister">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="18" height="18">
+        Cadastrar com Google
+      </button>
+      <div class="auth-divider"><span>ou</span></div>
+      <div class="form-group"><label>Nome completo</label><input type="text" id="authRegisterNome" placeholder="Seu nome" autocomplete="name"></div>
+      <div class="form-group"><label>E-mail</label><input type="email" id="authRegisterEmail" placeholder="seu@email.com" autocomplete="email"></div>
+      <div class="form-group"><label>Senha</label><input type="password" id="authRegisterSenha" placeholder="Mínimo 6 caracteres" autocomplete="new-password"></div>
+      <div class="auth-error" id="authRegisterError"></div>
+      <button class="btn btn--primary auth-submit" id="btnAuthRegister">Criar Conta</button>
+      <p class="auth-switch">Já tem conta? <button id="btnGoLogin">Entrar</button></p>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER GOOGLE (aparece ao entrar no site) -->
+<div class="google-banner" id="googleBanner" style="display:none">
+  <div class="google-banner__inner">
+    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="20" height="20">
+    <span>Entre com sua conta Google para agendar com mais facilidade</span>
+    <button class="google-banner__btn" id="btnBannerGoogle">Entrar com Google</button>
+    <button class="google-banner__close" id="btnBannerClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero__carousel swiper" id="heroSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide hero__slide" style="background-image:url('img/card_1.jpg')"></div>
+      <div class="swiper-slide hero__slide" style="background-image:url('img/card_3.jpg')"></div>
+      <div class="swiper-slide hero__slide" style="background-image:url('img/card_5.jpg')"></div>
+      <div class="swiper-slide hero__slide" style="background-image:url('img/card_7.jpg')"></div>
+      <div class="swiper-slide hero__slide" style="background-image:url('img/card_9.jpg')"></div>
+    </div>
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="hero__tag">Fotografia · Curitiba & Região</p>
+    <h1 class="hero__title">Momentos que<br><em>ficam para sempre</em></h1>
+    <p class="hero__sub">Eternizando a beleza dos seus momentos mais preciosos com arte e cuidado.</p>
+    <div class="hero__actions">
+      <a href="#agendar" class="btn btn--light">Agendar Ensaio</a>
+      <a href="#portfolio" class="btn btn--ghost">Ver Portfólio</a>
+    </div>
+  </div>
+  <div class="hero__scroll-hint"><span></span></div>
 </section>
 
-<section class="fotos">
-    <div class="fotos__title">
-        <div class="container">
-            <h2>Trabalhos recentes</h2>
-            <h3>Clique para mais</h3>
-        </div>
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="section-header">
+    <span class="section-tag">O que ofereço</span>
+    <h2 class="section-title">Serviços</h2>
+  </div>
+  <div class="servicos__grid">
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-ring"></i></div>
+      <h3>Casamento</h3>
+      <p>Cobertura completa do seu dia especial, do making-of à festa, com olhar delicado e atencioso.</p>
     </div>
-
-    <div class="fotos-container">
-        <div class="fotos-cards">
-            <a href="https://photos.app.goo.gl/JVAnMswnPPC2QjrW8" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_1.jpg" alt="Casamento" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Casamento</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/KTtegLpeobAMFqZu7" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_2.jpg" alt="Ensaio corporativo" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Ensaio Corporativo</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/SfyAEVmGonBmwgrdA" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_3.jpg" alt="Ensaio formanda" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Ensaio Formanda</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/YrNBZciPGAiLKvF19" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_4.jpg" alt="Aniversário 1 ano" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Aniversário 1 Ano</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/dok7iTTa11WbAEfs9" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_5.jpg" alt="Ensaio Aniversario 40" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Ensaio Aniversário</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/WfgHKxCd6i6Pzmh58" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_6.jpg" alt="Ensaio aniversário" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Ensaio Aniversário</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/6SPJsPrqK5iCpPj39" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_7.jpg" alt="Aniversário 15 anos" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Aniversário 15 Anos</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/6WP3ZV8rX8SyPhhg8" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_8.jpg" alt="Natalino" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Natalino</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/Gskeq8uURuG8GB6v6" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_9.jpg" alt="Chá revelação" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Chá Revelação</h4>
-                </div>
-            </a>
-            <a href="https://photos.app.goo.gl/UiWSm1f174vgLswp8" class="fotos-card">
-                <div class="fotos-card-content">
-                    <img src="img/card_10.jpg" alt="Chá de bebê" class="fotos-card-img">
-                    <h4 class="fotos-card-title">Chá de Bebê</h4>
-                </div>
-            </a>
-
-        </div>
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <h3>Formatura</h3>
+      <p>Ensaio de formanda completo: cap & gown, traje social e celebração da sua conquista.</p>
     </div>
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-briefcase"></i></div>
+      <h3>Corporativo</h3>
+      <p>Fotos profissionais para LinkedIn, site e branding pessoal. Transmita credibilidade e autenticidade.</p>
+    </div>
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-baby"></i></div>
+      <h3>Gestante</h3>
+      <p>Ensaios de maternidade e newborn para eternizar cada fase da chegada do bebê.</p>
+    </div>
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-gift"></i></div>
+      <h3>Chá Revelação</h3>
+      <p>Registre o momento mais aguardado com emoção, cor e muito amor.</p>
+    </div>
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-star"></i></div>
+      <h3>Festa de 15 Anos</h3>
+      <p>Ensaio externo e cobertura da debutante em seus mais belos momentos.</p>
+    </div>
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-cake-candles"></i></div>
+      <h3>Aniversários</h3>
+      <p>Do 1º aninho à festa adulta — cobertura ou ensaio temático exclusivo.</p>
+    </div>
+    <div class="servico-card">
+      <div class="servico-card__icon"><i class="fa-solid fa-camera"></i></div>
+      <h3>Outros</h3>
+      <p>Ensaios individuais, de casal, família e muito mais. Entre em contato!</p>
+    </div>
+  </div>
 </section>
 
+<!-- PORTFÓLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="section-header section-header--light">
+    <span class="section-tag">Trabalhos recentes</span>
+    <h2 class="section-title">Portfólio</h2>
+  </div>
+  <div class="portfolio__filters">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="casamento">Casamento</button>
+    <button class="filter-btn" data-filter="ensaio">Ensaio</button>
+    <button class="filter-btn" data-filter="bebe">Bebê & Gestante</button>
+    <button class="filter-btn" data-filter="aniversario">Aniversário</button>
+  </div>
+  <div class="portfolio__grid">
+    <div class="porto-item" data-cat="casamento"><a href="https://photos.app.goo.gl/JVAnMswnPPC2QjrW8" target="_blank" class="porto-item__link"><img src="img/card_1.jpg" alt="Casamento" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Casamento</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="ensaio"><a href="https://photos.app.goo.gl/KTtegLpeobAMFqZu7" target="_blank" class="porto-item__link"><img src="img/card_2.jpg" alt="Ensaio Corporativo" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Ensaio Corporativo</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="ensaio"><a href="https://photos.app.goo.gl/SfyAEVmGonBmwgrdA" target="_blank" class="porto-item__link"><img src="img/card_3.jpg" alt="Ensaio Formanda" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Ensaio Formanda</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="bebe"><a href="https://photos.app.goo.gl/YrNBZciPGAiLKvF19" target="_blank" class="porto-item__link"><img src="img/card_4.jpg" alt="Aniversário 1 Ano" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Aniversário 1 Ano</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="aniversario"><a href="https://photos.app.goo.gl/dok7iTTa11WbAEfs9" target="_blank" class="porto-item__link"><img src="img/card_5.jpg" alt="Ensaio Aniversário" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Ensaio Aniversário</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="aniversario"><a href="https://photos.app.goo.gl/WfgHKxCd6i6Pzmh58" target="_blank" class="porto-item__link"><img src="img/card_6.jpg" alt="Ensaio Aniversário" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Ensaio Aniversário</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="aniversario"><a href="https://photos.app.goo.gl/6SPJsPrqK5iCpPj39" target="_blank" class="porto-item__link"><img src="img/card_7.jpg" alt="Aniversário 15 Anos" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Aniversário 15 Anos</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="ensaio"><a href="https://photos.app.goo.gl/6WP3ZV8rX8SyPhhg8" target="_blank" class="porto-item__link"><img src="img/card_8.jpg" alt="Natalino" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Natalino</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="bebe"><a href="https://photos.app.goo.gl/Gskeq8uURuG8GB6v6" target="_blank" class="porto-item__link"><img src="img/card_9.jpg" alt="Chá Revelação" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Chá Revelação</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+    <div class="porto-item" data-cat="bebe"><a href="https://photos.app.goo.gl/UiWSm1f174vgLswp8" target="_blank" class="porto-item__link"><img src="img/card_10.jpg" alt="Chá de Bebê" loading="lazy"><div class="porto-item__overlay"><span class="porto-item__label">Chá de Bebê</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div></a></div>
+  </div>
+</section>
 
-<footer>
-    <p>&copy; 2025 Daiane Santarosa. Todos os direitos reservados.</p>
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="section-header">
+    <span class="section-tag">O que dizem</span>
+    <h2 class="section-title">Depoimentos</h2>
+  </div>
+  <div class="depoimentos__swiper swiper" id="depSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide dep-slide"><div class="dep-card"><div class="dep-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="dep-card__text">"Eu amei todas as fotos, ficaram lindas lindas, vou fazer um grande proveito delas, obrigada Dai!!"</p><div class="dep-card__author"><img src="img/feedback_1.jpg" alt="Gisselle" class="dep-card__avatar"><div><strong>Gisselle</strong><span>Ensaio Pessoal</span></div></div></div></div>
+      <div class="swiper-slide dep-slide"><div class="dep-card"><div class="dep-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="dep-card__text">"Seu trabalho é lindo e impecável!! Superou todas as minhas expectativas."</p><div class="dep-card__author"><img src="img/feedback_2.jpg" alt="Monique" class="dep-card__avatar"><div><strong>Monique</strong><span>Ensaio de Casal</span></div></div></div></div>
+      <div class="swiper-slide dep-slide"><div class="dep-card"><div class="dep-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="dep-card__text">"Não sei nem qual foi minha favorita, amei todasssssssss!! Dia incrível que vou lembrar para sempre."</p><div class="dep-card__author"><img src="img/feedback_3.jpg" alt="Danielle" class="dep-card__avatar"><div><strong>Danielle</strong><span>Aniversário 30 anos</span></div></div></div></div>
+      <div class="swiper-slide dep-slide"><div class="dep-card"><div class="dep-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="dep-card__text">"Obrigadaaaa, ficaram lindas as fotos! A Daiane tem um dom especial para fazer a gente se sentir à vontade."</p><div class="dep-card__author"><img src="img/feedback_4.jpg" alt="Carol" class="dep-card__avatar"><div><strong>Carol</strong><span>Ensaio Gestante</span></div></div></div></div>
+    </div>
+    <div class="swiper-pagination" id="depPag"></div>
+  </div>
+</section>
+
+<!-- MEUS AGENDAMENTOS (só logado) -->
+<section class="meus-ag" id="meus-agendamentos" style="display:none">
+  <div class="section-header">
+    <span class="section-tag">Sua agenda</span>
+    <h2 class="section-title">Meus Agendamentos</h2>
+  </div>
+  <div class="meus-ag__list" id="meusAgList"></div>
+  <p class="meus-ag__empty" id="meusAgEmpty" style="display:none">Você ainda não tem agendamentos. Que tal marcar o seu ensaio?</p>
+</section>
+
+<!-- AGENDAMENTO -->
+<section class="agendamento" id="agendar">
+  <div class="section-header section-header--light">
+    <span class="section-tag">Agenda online</span>
+    <h2 class="section-title">Agende seu Ensaio</h2>
+    <p class="section-desc">Escolha o serviço, data e horário. Confirmarei sua reserva pelo WhatsApp em até 24h.</p>
+  </div>
+  <div class="agendamento__wrapper">
+
+    <!-- Step 1 -->
+    <div class="agenda-step active" id="step1">
+      <h3 class="agenda-step__title"><span>1</span> Escolha o Serviço</h3>
+      <div class="servico-opts">
+        <label class="servico-opt"><input type="radio" name="servico" value="Casamento"><div class="servico-opt__card"><i class="fa-solid fa-ring"></i><strong>Casamento</strong></div></label>
+        <label class="servico-opt"><input type="radio" name="servico" value="Formatura"><div class="servico-opt__card"><i class="fa-solid fa-graduation-cap"></i><strong>Formatura</strong></div></label>
+        <label class="servico-opt"><input type="radio" name="servico" value="Corporativo"><div class="servico-opt__card"><i class="fa-solid fa-briefcase"></i><strong>Corporativo</strong></div></label>
+        <label class="servico-opt"><input type="radio" name="servico" value="Gestante / Newborn"><div class="servico-opt__card"><i class="fa-solid fa-baby"></i><strong>Gestante</strong></div></label>
+        <label class="servico-opt"><input type="radio" name="servico" value="Chá Revelação"><div class="servico-opt__card"><i class="fa-solid fa-gift"></i><strong>Chá Revelação</strong></div></label>
+        <label class="servico-opt"><input type="radio" name="servico" value="Festa de 15 Anos"><div class="servico-opt__card"><i class="fa-solid fa-star"></i><strong>15 Anos</strong></div></label>
+        <label class="servico-opt"><input type="radio" name="servico" value="Aniversário"><div class="servico-opt__card"><i class="fa-solid fa-cake-candles"></i><strong>Aniversário</strong></div></label>
+        <label class="servico-opt"><input type="radio" name="servico" value="Outro / A combinar"><div class="servico-opt__card"><i class="fa-solid fa-camera"></i><strong>Outros</strong></div></label>
+      </div>
+      <button class="btn btn--primary" id="btn12">Próximo <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="agenda-step" id="step2">
+      <h3 class="agenda-step__title"><span>2</span> Escolha Data e Horário</h3>
+      <div class="agenda-calendar">
+        <div class="cal-header">
+          <button class="cal-nav" id="calPrev"><i class="fa-solid fa-chevron-left"></i></button>
+          <span class="cal-month-label" id="calLabel"></span>
+          <button class="cal-nav" id="calNext"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="cal-weekdays">
+          <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+        </div>
+        <div class="cal-days" id="calDays"></div>
+      </div>
+      <div class="horarios" id="horariosBox" style="display:none">
+        <h4 class="horarios__title">Horários disponíveis</h4>
+        <div id="horariosLoading" class="horarios-loading" style="display:none"><i class="fa-solid fa-spinner fa-spin"></i> Verificando disponibilidade...</div>
+        <div class="horarios__grid" id="horariosGrid"></div>
+      </div>
+      <div class="step-btns">
+        <button class="btn btn--ghost" id="btnBack1">← Voltar</button>
+        <button class="btn btn--primary" id="btn23">Próximo <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="agenda-step" id="step3">
+      <h3 class="agenda-step__title"><span>3</span> Seus Dados</h3>
+      <div class="resumo-agendamento" id="resumoBox"></div>
+      <div class="form-grid">
+        <div class="form-group"><label for="nomeCliente">Nome completo *</label><input type="text" id="nomeCliente" placeholder="Seu nome"></div>
+        <div class="form-group"><label for="telefoneCliente">WhatsApp *</label><input type="tel" id="telefoneCliente" placeholder="(41) 99999-9999"></div>
+        <div class="form-group form-group--full"><label for="emailCliente">E-mail</label><input type="email" id="emailCliente" placeholder="seu@email.com"></div>
+        <div class="form-group form-group--full"><label for="msgCliente">Mensagem / Detalhes</label><textarea id="msgCliente" rows="3" placeholder="Conte um pouco mais sobre o que você imagina para o seu ensaio..."></textarea></div>
+      </div>
+      <div class="step-btns">
+        <button class="btn btn--ghost" id="btnBack2">← Voltar</button>
+        <button class="btn btn--primary" id="btnEnviar"><i class="fa-brands fa-whatsapp"></i> Confirmar pelo WhatsApp</button>
+      </div>
+    </div>
+
+    <!-- Sucesso -->
+    <div class="agenda-step" id="stepOk">
+      <div class="agendamento-ok">
+        <div class="agendamento-ok__icon"><i class="fa-solid fa-clock"></i></div>
+        <h3>Solicitação enviada!</h3>
+        <p>Sua reserva está <strong>pendente de confirmação</strong>. A Daiane irá analisar e confirmar pelo WhatsApp em até 24h. 🎉</p>
+        <button class="btn btn--primary" id="btnNovo">Fazer novo agendamento</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <p class="footer__name">Daiane Santarosa</p>
+      <p class="footer__tagline">Fotografia com alma</p>
+    </div>
+    <div class="footer__social">
+      <a href="https://www.instagram.com/daianesantarosafotografia/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://wa.me/554192576289" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <p class="footer__copy">&copy; 2025 Daiane Santarosa Fotografia · Todos os direitos reservados.
+      <a href="admin.html" style="color:rgba(255,255,255,0.12);margin-left:1rem;font-size:0.65rem;text-decoration:none;">admin</a>
+    </p>
+  </div>
 </footer>
 
-        <!-- Scripts -->
-        <script src="js/menu.js"></script>
-        <script src="js/main.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script>
-            // Inicialização do Swiper
-            const swiper = new Swiper('.swiper-container', {
-                loop: true,
-                speed: 300, // Tempo de transição em milissegundos (300ms = 0.3s)
-                allowTouchMove: true, // Habilita o swipe em todas as telas
-                autoplay: {
-                    delay: 5000, // Tempo entre cada transição (5 segundos)
-                    disableOnInteraction: false, // Continua o autoplay mesmo após interação do usuário
-                },
-            });
-        </script>
+<a href="https://wa.me/554192576289?text=Olá%20Daiane!" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
-    </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Daiane Santarosa Fotografia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style/admin.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <div class="login-logo">DS</div>
+      <h1 class="login-title">Painel Administrativo</h1>
+      <p class="login-sub">Daiane Santarosa Fotografia</p>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" id="loginEmail" placeholder="seu@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" id="loginSenha" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <div class="login-error" id="loginError"></div>
+      <button class="btn-primary" id="btnLogin" style="width:100%;justify-content:center">
+        <i class="fa-solid fa-right-to-bracket"></i> Entrar
+      </button>
+      <div style="display:flex;align-items:center;gap:1rem;margin:1rem 0;color:var(--muted);font-size:0.75rem"><div style="flex:1;height:1px;background:rgba(0,0,0,0.08)"></div><span>ou</span><div style="flex:1;height:1px;background:rgba(0,0,0,0.08)"></div></div>
+      <button class="btn-ghost" id="btnGoogleAdmin" style="width:100%;justify-content:center;display:flex;align-items:center;gap:0.6rem">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="16" height="16"> Entrar com Google
+      </button>
+    </div>
+  </div>
+
+  <!-- PAINEL -->
+  <div class="admin-layout" id="adminLayout" style="display:none">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <span class="sidebar__logo">DS</span>
+        <div>
+          <p class="sidebar__name">Daiane Santarosa</p>
+          <p class="sidebar__role">Administrador</p>
+        </div>
+      </div>
+      <nav class="sidebar__nav">
+        <button class="sidebar__link active" data-tab="agenda">
+          <i class="fa-solid fa-calendar-days"></i> Agenda
+        </button>
+        <button class="sidebar__link" data-tab="agendamentos">
+          <i class="fa-solid fa-list-check"></i> Agendamentos
+        </button>
+        <button class="sidebar__link" data-tab="bloqueios">
+          <i class="fa-solid fa-ban"></i> Dias Bloqueados
+        </button>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="index.html" class="sidebar__back"><i class="fa-solid fa-arrow-left"></i> Ver site</a>
+        <button class="sidebar__logout" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+      </div>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="admin-main">
+
+      <!-- ===== ABA: AGENDA ===== -->
+      <div class="tab-panel active" id="tab-agenda">
+        <div class="panel-header">
+          <h2 class="panel-title">Agenda do Mês</h2>
+        </div>
+        <div class="admin-calendar">
+          <div class="admin-cal-header">
+            <button class="cal-nav-btn" id="adminCalPrev"><i class="fa-solid fa-chevron-left"></i></button>
+            <span class="admin-cal-label" id="adminCalLabel"></span>
+            <button class="cal-nav-btn" id="adminCalNext"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="admin-cal-weekdays">
+            <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+          </div>
+          <div class="admin-cal-days" id="adminCalDays"></div>
+        </div>
+        <!-- Detalhe do dia selecionado -->
+        <div class="day-detail" id="dayDetail" style="display:none">
+          <div class="day-detail__header">
+            <h3 id="dayDetailTitle"></h3>
+            <div class="day-detail__actions">
+              <button class="btn-block" id="btnBloquearDia"><i class="fa-solid fa-ban"></i> Bloquear dia</button>
+              <button class="btn-unblock" id="btnDesbloquearDia" style="display:none"><i class="fa-solid fa-circle-check"></i> Desbloquear</button>
+            </div>
+          </div>
+          <div id="dayDetailContent"></div>
+        </div>
+      </div>
+
+      <!-- ===== ABA: AGENDAMENTOS ===== -->
+      <div class="tab-panel" id="tab-agendamentos">
+        <div class="panel-header">
+          <h2 class="panel-title">Todos os Agendamentos</h2>
+          <button class="btn-refresh" id="btnRefreshAgendamentos"><i class="fa-solid fa-rotate-right"></i> Atualizar</button>
+        </div>
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Buscar por nome, serviço ou data...">
+        </div>
+        <div class="agendamentos-list" id="agendamentosList">
+          <div class="loading-msg"><i class="fa-solid fa-spinner fa-spin"></i> Carregando...</div>
+        </div>
+      </div>
+
+      <!-- ===== ABA: BLOQUEIOS ===== -->
+      <div class="tab-panel" id="tab-bloqueios">
+        <div class="panel-header">
+          <h2 class="panel-title">Dias Bloqueados</h2>
+        </div>
+        <div class="bloqueio-form">
+          <h3 class="bloqueio-form__title">Bloquear novo período</h3>
+          <div class="bloqueio-inputs">
+            <div class="form-group">
+              <label>Data inicial</label>
+              <input type="date" id="bloqueioDataInicio">
+            </div>
+            <div class="form-group">
+              <label>Data final (opcional)</label>
+              <input type="date" id="bloqueioDataFim">
+            </div>
+            <div class="form-group form-group--wide">
+              <label>Motivo</label>
+              <input type="text" id="bloqueioMotivo" placeholder="Ex: Férias, Evento pessoal, Feriado...">
+            </div>
+            <button class="btn-primary" id="btnSalvarBloqueio">
+              <i class="fa-solid fa-ban"></i> Bloquear
+            </button>
+          </div>
+        </div>
+        <div class="bloqueios-list" id="bloqueiosList">
+          <div class="loading-msg"><i class="fa-solid fa-spinner fa-spin"></i> Carregando...</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Modal de confirmação -->
+  <div class="modal-overlay" id="modalOverlay" style="display:none">
+    <div class="modal">
+      <p class="modal__text" id="modalText"></p>
+      <div class="modal__actions">
+        <button class="btn-ghost" id="modalCancel">Cancelar</button>
+        <button class="btn-danger" id="modalConfirm">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
