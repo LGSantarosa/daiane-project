@@ -5,13 +5,13 @@ import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, collection, ge
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNOvKFco6IFEZ4sjXisKZbhmq2ASq3B-8",
-  authDomain: "daiane-fotografia.firebaseapp.com",
-  projectId: "daiane-fotografia",
-  storageBucket: "daiane-fotografia.firebasestorage.app",
-  messagingSenderId: "924345532029",
-  appId: "1:924345532029:web:6485c476b8868dc9d33b14",
-  measurementId: "G-WZ4SGDQDKR"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 const app           = initializeApp(firebaseConfig);
